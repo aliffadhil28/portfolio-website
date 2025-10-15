@@ -31,7 +31,7 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto"
                 >
-                    A passionate Frontend Developer specializing in building modern web applications with React and Tailwind CSS.
+                    A junior Fullstack Developer passionate about building modern web applications, mainly using React and Laravel, with a strong interest in both frontend and backend technologies.
                 </motion.p>
 
                 <motion.div
