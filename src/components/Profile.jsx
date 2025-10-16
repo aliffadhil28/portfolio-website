@@ -85,7 +85,7 @@ const Profile = () => {
                                 <div className="text-gray-400">Years Experience</div>
                             </div>
                             <div className="bg-gray-900 p-4 rounded-lg">
-                                <div className="text-2xl font-bold text-blue-400">10+</div>
+                                <div className="text-2xl font-bold text-blue-400">5+</div>
                                 <div className="text-gray-400">Projects Completed</div>
                             </div>
                             <div className="bg-gray-900 p-4 rounded-lg">

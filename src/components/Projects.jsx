@@ -4,20 +4,12 @@ import { EyeIcon, CodeBracketIcon } from '@heroicons/react/24/outline'
 const Projects = () => {
     const projects = [
         {
-            title: "Laravel Boilerplate",
-            description: "A comprehensive boilerplate for Laravel applications with authentication, user roles, and permissions.",
-            image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-            tags: ["React", "Laravel", "MySQL", "Reverb"],
-            liveUrl: "#",
-            codeUrl: "#"
-        },
-        {
             title: "Online Classroom",
-            description: "A virtual classroom application with real-time video conferencing, chat, and collaborative tools.",
-            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1139&q=80",
+            description: "A classroom registration system that allows students to enroll in various courses and manage their learning journey.",
+            image: '/images/project-online-class.png',
             tags: ["React", "Laravel", "Filament", "MySQL"],
-            liveUrl: "#",
-            codeUrl: "#"
+            liveUrl: "https://onlineclass.alif-fadhil.my.id",
+            codeUrl: "https://github.com/Firosmalik000/online-class"
         }
     ]
 
