@@ -10,6 +10,14 @@ const Projects = () => {
             tags: ["React", "Laravel", "Filament", "MySQL"],
             liveUrl: "https://onlineclass.alif-fadhil.my.id",
             codeUrl: "https://github.com/Firosmalik000/online-class"
+        },
+        {
+            title: "Product Stocks",
+            description: "A product inventory and stock management system to track products, quantities, and restocking.",
+            image: '/images/project-product-stocks.png',
+            tags: ["React", "Laravel", "MySQL"],
+            liveUrl: "https://product-stocks.alif-fadhil.my.id",
+            codeUrl: "https://github.com/aliffadhil28/product-stocks"
         }
     ]
 
