@@ -2,7 +2,23 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
 
+
 const Contact = () => {
+    const socials = [
+        {
+            'name': 'GitHub',
+            'link': 'https://github.com/aliffadhil28'
+        },
+        {
+            'name': 'Instagram',
+            'link': 'https://instagram.com/alif.fadhil08'
+        },
+        {
+            'name': 'LinkedIn',
+            'link': 'https://linkedin.com/in/aliffadhil28'
+        },
+    ];
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -16,13 +32,38 @@ const Contact = () => {
         })
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Handle form submission here
-        console.log(formData)
-        alert('Thank you for your message! I will get back to you soon.')
-        setFormData({ name: '', email: '', message: '' })
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: import.meta.env.VITE_ACCESS_KEY_WEB3,
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    redirect: "https://web3forms.com/success", // opsional
+                }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert("✅ Message sent successfully!");
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                alert("❌ Failed to send message. Please try again.");
+                console.error(result);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("⚠️ Something went wrong. Please try again later.");
+        }
+    };
+
 
     return (
         <section id="contact" className="py-20 bg-gray-900">
@@ -91,14 +132,16 @@ const Contact = () => {
                         <div className="mt-10">
                             <h4 className="text-lg font-medium mb-4">Follow Me</h4>
                             <div className="flex space-x-4">
-                                {['GitHub', 'LinkedIn', 'Instagram'].map((social, index) => (
+                                {socials.map((social, index) => (
                                     <motion.a
                                         key={index}
                                         whileHover={{ y: -5 }}
-                                        href="#"
+                                        href={social.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="px-4 py-2 bg-gray-800 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
                                     >
-                                        {social}
+                                        {social.name}
                                     </motion.a>
                                 ))}
                             </div>
